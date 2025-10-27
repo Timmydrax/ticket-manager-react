@@ -1,74 +1,109 @@
-# React + TypeScript + Vite
+# HNG Ticket Manager - Multi-Framework Implementation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A comprehensive ticket management web application built in three different frameworks: **React**, **Vue.js**, and **Twig (PHP)**. All three implementations feature identical functionality, design, and user experience.
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project demonstrates how to build the same application across multiple technology stacks while maintaining consistency in:
 
-## React Compiler
+- User interface and design
+- Feature set and functionality
+- Data structure and validation
+- User experience and workflows
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Implementations
 
-## Expanding the ESLint configuration
+A modern React application using React Router with TypeScript, Tailwind CSS, and shadcn/ui components.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**Key Features:**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Server and client components
+- Built-in routing with Next.js
+- Responsive design with Tailwind CSS
+- localStorage for session and data persistence
+- Form validation with inline error messages
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+**Getting Started:**
+\`\`\`bash
+cd tickect-managemer-react
+npm install
+npm run dev
+\`\`\`
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Shared Features Across All Implementations
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Pages
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+#### Landing Page
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-# ticket-manager-react
+- Hero section with wavy SVG background
+- Decorative circles for visual interest
+- Feature cards highlighting key capabilities
+- Call-to-action buttons for login/signup
+- Responsive layout for all screen sizes
+
+#### Authentication
+
+- **Login Page** - Email and password validation
+- **Signup Page** - Name, email, password confirmation
+- Form validation with inline error messages
+- Demo credentials for testing
+- Session token storage
+
+#### Dashboard
+
+- Ticket statistics cards (total, open, in progress, closed)
+- Color-coded stat cards
+- Quick navigation to ticket management
+- User email display
+- Logout functionality
+
+#### Ticket Management
+
+- **List View** - Display all tickets with status badges
+- **Create** - Form to add new tickets with title, description, status
+- **Edit** - Update ticket details
+- **Delete** - Remove tickets with confirmation
+- Status filtering with color coding
+
+### Design System
+
+#### Colors
+
+- **Primary:** Blue (#2563eb)
+- **Success/Open:** Green (#22c55e)
+- **Warning/In Progress:** Amber (#f59e0b)
+- **Neutral/Closed:** Gray (#6b7280)
+- **Background:** Light gray (#f9fafb)
+- **Text:** Dark gray (#262626)
+
+#### Typography
+
+- **Headings:** Bold, sans-serif
+- **Body:** Regular weight, sans-serif
+- **Code:** Monospace for credentials
+
+#### Layout
+
+- Max-width: 1440px (72rem)
+- Centered container
+- Mobile-first responsive design
+- Flexbox for layouts
+- Grid for multi-column sections
+
+#### Components
+
+- Cards with subtle borders
+- Buttons with hover states
+- Form inputs with focus states
+- Status badges with background colors
+- Navigation headers with consistent styling
+
+#### Current Implementation (Development Only)
+
+- Mock authentication with hardcoded credentials
+- localStorage for session storage
+- No encryption or secure token handling
+- Client-side validation only
+
+---

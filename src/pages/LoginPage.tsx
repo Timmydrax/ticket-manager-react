@@ -90,7 +90,7 @@ export default function LoginPage() {
               type="email"
               placeholder="you@example.com"
               value={email}
-              autoComplete="current-email"
+              autoComplete="email"
               onChange={(e) => setEmail(e.target.value)}
               className={errors.email ? "border-destructive" : ""}
             />

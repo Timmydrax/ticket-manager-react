@@ -90,7 +90,7 @@ export default function SignupPage() {
               type="email"
               placeholder="you@example.com"
               value={email}
-              autoComplete="new-email"
+              autoComplete="email"
               onChange={(e) => setEmail(e.target.value)}
               className={errors.email ? "border-destructive" : ""}
             />

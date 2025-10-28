@@ -125,7 +125,7 @@ export default function EditTicketPage() {
       <header className="border-b border-border bg-white">
         <div className="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-primary">
-            HNG Ticket Manager
+            Ticket Manager
           </h1>
           <Link to="/tickets">
             <Button variant="outline">Back to Tickets</Button>

@@ -8,9 +8,7 @@ export default function LandingPage() {
       {/* Header */}
       <header className="border-b border-border">
         <div className="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-primary">
-            HNG Ticket Manager
-          </h1>
+          <h1 className="text-2xl font-bold text-primary">Ticket Manager</h1>
           <div className="flex gap-4">
             <Link to="/auth/login">
               <Button variant="outline">Login</Button>
@@ -96,7 +94,7 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="border-t border-border bg-muted/50 py-8">
         <div className="max-w-6xl mx-auto px-4 text-center text-muted-foreground">
-          <p>&copy; 2025 HNG Ticket Manager. All rights reserved.</p>
+          <p>&copy; 2025 Ticket Manager. All rights reserved.</p>
         </div>
       </footer>
     </div>

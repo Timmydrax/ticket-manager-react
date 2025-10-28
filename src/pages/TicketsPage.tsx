@@ -133,9 +133,7 @@ export default function TicketsPage() {
       {/* Header */}
       <header className="border-b border-border bg-white">
         <div className="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-primary">
-            HNG Ticket Manager
-          </h1>
+          <h1 className="text-2xl font-bold text-primary">Ticket Manager</h1>
           <Link to="/dashboard">
             <Button variant="outline">Back to Dashboard</Button>
           </Link>

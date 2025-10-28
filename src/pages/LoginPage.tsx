@@ -47,8 +47,27 @@ export default function LoginPage() {
 
     // Simulate API call
     setTimeout(() => {
-      // Mock authentication - check against demo credentials
-      if (email === "demo@example.com" && password === "password123") {
+      type TicketAppUser = {
+        email: string;
+        password: string;
+      };
+
+      const rawUser = localStorage.getItem("ticketapp_user");
+
+      const savedUser: TicketAppUser | null = rawUser
+        ? JSON.parse(rawUser)
+        : null;
+
+      if (!savedUser) {
+        toast({
+          title: "No account Found",
+          description: "Please create an account",
+        });
+        setIsLoading(false);
+        return;
+      }
+
+      if (savedUser.email === email && savedUser.password === password) {
         localStorage.setItem(
           "ticketapp_session",
           JSON.stringify({
@@ -61,6 +80,7 @@ export default function LoginPage() {
           title: "Success",
           description: "Logged in successfully",
         });
+        setIsLoading(false);
         navigate("/dashboard");
       } else {
         toast({
@@ -118,19 +138,6 @@ export default function LoginPage() {
             {isLoading ? "Signing in..." : "Sign In"}
           </Button>
         </form>
-
-        <div className="mt-6 pt-6 border-t border-border">
-          <p className="text-sm text-muted-foreground mb-4">
-            Demo credentials: <br />
-            Email:{" "}
-            <code className="bg-muted px-2 py-1 rounded">
-              demo@example.com
-            </code>{" "}
-            <br />
-            Password:{" "}
-            <code className="bg-muted px-2 py-1 rounded">password123</code>
-          </p>
-        </div>
 
         <div className="mt-6 text-center">
           <p className="text-sm text-muted-foreground">

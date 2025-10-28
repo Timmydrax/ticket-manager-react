@@ -57,6 +57,14 @@ export default function SignupPage() {
     // Simulate API call
     setTimeout(() => {
       localStorage.setItem(
+        "ticketapp_user",
+        JSON.stringify({
+          email,
+          password,
+        })
+      );
+
+      localStorage.setItem(
         "ticketapp_session",
         JSON.stringify({
           email,
@@ -68,9 +76,9 @@ export default function SignupPage() {
         title: "Success",
         description: "Account created successfully",
       });
-      navigate("/dashboard");
+      navigate("/auth/login");
       setIsLoading(false);
-    }, 500);
+    }, 1000);
   };
 
   return (
